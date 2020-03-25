@@ -1,0 +1,75 @@
+[Profiles]
+Count=1
+Def=0
+[Profiles\0]
+Name=Build
+Count=1
+[Profiles\0\0]
+Name=Make
+File="C:\cygwin\bin\make.exe"
+Arguments=""
+Dir=C:\workspace\gcc-frontend\librcx\native
+CompMess=""
+Hidden=1
+Detached=0
+TimeOut=20
+Delay=0
+NeedExit=-1
+[General]
+LoadAll=2
+ShowExplorer=1
+Name=LEGO.NET
+SortFiles=0
+Params=
+CloseExec=0
+[Files]
+Count=1
+Active=librcx\native\Makefile
+0=librcx\native\Makefile|1
+1=librcx\native\librcx.c|1
+[Tools]
+Count=4
+Name_1=make userprog.lx
+Kind_1=0
+IconFile_1=C:\cygwin\bin\make.exe
+Command_1="C:\cygwin\bin\make.exe"
+Arguments_1="userprog.lx"
+WorkingDir_1=C:\workspace\gcc-frontend\samples
+Capture_1=1
+Hidden_1=1
+InsertStr_1=""
+ECmd_1=0
+SaveBefore_1=0
+Name_2=load userprog.lx
+Kind_2=0
+IconFile_2=X:\Programs\cygwin\local\legOS\util\dll.exe
+Command_2="X:\Programs\cygwin\local\legOS\util\dll.exe"
+Arguments_2="--tty=usb userprog.lx"
+WorkingDir_2=C:\workspace\gcc-frontend\samples
+Capture_2=1
+Hidden_2=1
+InsertStr_2=""
+ECmd_2=0
+SaveBefore_2=0
+Name_3=make [active].lx
+Kind_3=0
+IconFile_3=C:\cygwin\bin\make.exe
+Command_3="C:\cygwin\bin\make.exe"
+Arguments_3="$[ActiveDocTitleLongNoExt].lx"
+WorkingDir_3=C:\workspace\gcc-frontend\samples
+Capture_3=1
+Hidden_3=1
+InsertStr_3=""
+ECmd_3=0
+SaveBefore_3=0
+Name_4=load [active].lx
+Kind_4=0
+IconFile_4=X:\Programs\cygwin\local\legOS\util\dll.exe
+Command_4="X:\Programs\cygwin\local\legOS\util\dll.exe"
+Arguments_4="--tty=usb $[ActiveDocTitleLongNoExt].lx"
+WorkingDir_4=C:\workspace\gcc-frontend\samples
+Capture_4=1
+Hidden_4=1
+InsertStr_4=""
+ECmd_4=0
+SaveBefore_4=0

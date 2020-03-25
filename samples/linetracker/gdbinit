@@ -1,0 +1,5 @@
+dir .
+dir ../../gcc
+dir ../../gcc/cil
+source ../../gcc/gdbinit.in
+set args ../../../LEGO.NET/samples/linetracker/bin/release/linetracker.exe

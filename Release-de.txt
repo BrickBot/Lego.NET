@@ -1,0 +1,40 @@
+Schritte für die Erstellung eines LEGO .NET Releases
+====================================================
+
+Benötigte Software:
+
+ - Subversion-Client
+ - Visual Studio .NET 2003
+ - Cygwin
+ - binutils konfiguriert für h8300-hms in /usr/local
+ - GCC konfiguriert für h8300-hms in /usr/local, einschließlich g++
+ 
+
+
+1. Alle Quellen (gcc, LEGO.NET) auschecken
+
+
+2. Die Datei README.txt und Setup-Projekt für das Release vorbereiten:   
+   
+   - die Datei README.txt (Pfad ...\LEGO.NET\deployment\README.txt) an die neue Version
+     anpassen (Versionsnummer, Neuerungen)
+   
+   - im Setup-Projekt (Pfad ...\LEGO.NET\deployment\SetupProject) die 'Version' ändern,
+     den 'ProductCode' neu generieren und gegebenenfalls hinzugekommene Dateien
+     dem Setup-Projekt hinzufügen
+     (Quelle für die neuen Dateien sollte immer der Order ...\LEGO.NET\deployment\files\XXX sein;
+      diese werden zur Zeit mit der Batch-Datei createInstallPackage.bat an diese Stelle kopiert)
+
+3. BrickOS (Pfad ...\LEGO.NET\brickos) unter cygwin kompilieren (configure;make;make install)
+
+4. In der Datei createInstallPackage.bat (Pfad ...\LEGO.NET\deployment\createInstallPackage.bat) die
+   benötigten Pfade setzen und bei neu hinzugekommen
+
+5. Batchdatei createInstallPackage.bat ausführen und auf Fehlermeldungen achten 
+
+6. Nach fehlerfreier Ausführung der Batch-Datei und einer erfolgreichen Test-Installation
+   werden die vorgenommenen Änderungen eingecheckt und die Release-Tags für gcc und LEGO.NET gesetzt
+
+7. Archive für die Quellen gcc und LEGO.NET erstellen
+
+8. MSI-Datei und die Archive nach \\fs3\projekte$\DCL\Languages for RCX\Lego.NET\Releases kopieren

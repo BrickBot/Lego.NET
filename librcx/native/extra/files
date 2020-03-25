@@ -1,0 +1,3 @@
+EXTRA=extra/nullreference.c\
+      extra/index_out_of_range.c\
+      extra/out_of_memory.c

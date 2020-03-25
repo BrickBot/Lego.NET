@@ -1,0 +1,5 @@
+dir .
+dir ../../gcc
+dir ../../gcc/cil
+source ../../gcc/gdbinit.in
+set args -L C:\workspace\LEGO.NET ../../../LEGO.NET/userprog/bin/Release/userprog.exe

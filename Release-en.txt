@@ -1,0 +1,50 @@
+Steps to create a LEGO .NET release
+===================================
+
+(Translated via Google Translate)
+
+Required software:
+
+ - Subversion client
+ - Visual Studio .NET 2003
+ - Cygwin
+ - binutils configured for h8300-hms in /usr/local
+ - GCC configured for h8300-hms in /usr/local, including g++
+ 
+
+
+1. Check out all sources (gcc, LEGO.NET)
+
+2. Prepare the README.txt file and setup project for the release:
+   
+   - the file README.txt (path ... \LEGO.NET\deployment\README.txt) to the new version
+     adapt (version number, new features)
+   
+   - change the 'version' in the setup project (path ... \LEGO.NET\deployment\SetupProject),
+     regenerate the 'ProductCode' and any additional files
+     add to the setup project
+     (The source for the new files should always be the order ... \LEGO.NET\deployment\files\XXX;
+      these are currently copied to this location with the batch file createInstallPackage.bat)
+
+3. Compile and install the brickOS-bibo project under Cygwin (configure; make; make install)
+
+   - https://github.com/BrickBot/brickOS-bibo
+
+4. If there are any changes to the brickOS-bibo API, accordingly update ... \LEGO.NET\librcx\lego.py
+
+5. Run ... \LEGO.NET\librcx\lego.py
+
+6. In the file createInstallPackage.bat (path ... \LEGO.NET\deployment\createInstallPackage.bat) the
+   set the required paths and add new ones
+
+7. Execute the batch file createInstallPackage.bat and watch out for error messages
+
+8. After an error-free execution of the batch file and a successful test installation
+   the changes made are checked in and the release tags for gcc and LEGO.NET are set
+
+9. Create archives for the gcc and LEGO.NET sources
+
+10. Copy the MSI file and the archives to \\fs3\projekte$\DCL\Languages ​​for RCX\Lego.NET\Releases
+
+   - NOTE: This MSI is incomplete for allowing the end-user to update lego.py based on changes
+           to brickOS-bibo, as it fails to include several key components.
