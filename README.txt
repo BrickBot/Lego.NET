@@ -4,6 +4,9 @@ A project to make the .NET run-time available on the Lego Mindstorm RCX platform
 
 Original Project Website – https://www.dcl.hpi.uni-potsdam.de/research/lego.NET/
 
+Project Article – http://www.jot.fm/issues/issue_2004_02/article2.pdf
+  - Also included in the version control repository
+
 This project relies on the following projects
 * binutils-cil for h8300-hms cross-compilation
   - https://github.com/BrickBot/binutils-cil
