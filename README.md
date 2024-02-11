@@ -1,6 +1,6 @@
-Lego.NET, version 1.4
+Lego.NET
 =====================
-A project to make the .NET run-time available on the Lego Mindstorm RCX platform
+A project to make the .NET run-time available on a Lego MindStorms RCX running BrickOS firmware.
 
 Original Project Websites
 * https://www.dcl.hpi.uni-potsdam.de/research/lego.NET/
@@ -9,10 +9,36 @@ Original Project Websites
 Project Article – http://www.jot.fm/issues/issue_2004_02/article2.pdf
 * Also included in the version control repository
 
-Dependencies:  This project relies on the following projects
+Dependencies
+------------
+This project relies on a special branch of binutils and gcc that was developed to support .NET,
+and these capabilities later became known as the CLI Front-End (with a related effort being the CLI Back-End).
+* [GCC CLI Project](https://gcc.gnu.org/projects/cli.html)
+* [ReadMe with Build Instructions](https://gcc.gnu.org/git/?p=gcc.git;a=blob;f=README;hb=refs/vendors/st/heads/README)
+
+The following repositories contain the version of binutils and gcc that were bundled with Lego.NET v1.4
 * [binutils-cil](https://github.com/BrickBot/binutils-cil) for h8300-hms cross-compilation
 * [gcc-cil](https://github.com/BrickBot/gcc-cil) for h8300-hms cross-compilation, including g++
 
+Related refs in the GNU GCC Git repository can be queried by executing the Git command line noted below,
+which are more recent versions of BinUtils-CIL and GCC-CIL than what was bundled with Lego.NET v1.4.
+``` Shell
+git ls-remote --refs http://gcc.gnu.org/git/gcc.git refs/vendors/st/\*
+```
+
+An archive based on one of those refs can be downloaded by executing a Git command like the following:
+``` Shell
+git archive --format=zip --remote=git://gcc.gnu.org/git/gcc.git refs/vendors/st/heads/cli-fe --output=cli-fe.zip
+```
+
+Because Lego.NET programs are designed to run under BrickOS on a Lego MindStorms RCX, the
+[H8/300 cross-compilation capabilities](https://gcc.gnu.org/projects/h8300-abi.html) of GCC and BinUtils are also needed.
+
+Between the fact that Lego.NET is designed to work with .NET executables targeting .NET 2.0
+and the fact that the toolchain for BrickOS is Linux based, it appears to be advisable to use
+the [Mono project](https://mono-project.com/) for the .NET build tasks.
+Additionally, by leveraging the [Mono build of MSBuild](https://github.com/mono/msbuild)
+SDK-style project files can even be used when building projects targeting .NET Framework 2.0.
 
 
 Contents
