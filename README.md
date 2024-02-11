@@ -20,7 +20,7 @@ The following repositories contain the version of binutils and gcc that were bun
 * [binutils-cil](https://github.com/BrickBot/binutils-cil) for h8300-hms cross-compilation
 * [gcc-cil](https://github.com/BrickBot/gcc-cil) for h8300-hms cross-compilation, including g++
 
-Related refs in the GNU GCC Git repository can be queried by executing the Git command line noted below,
+Related refs in the [GNU GCC Git repository](https://gcc.gnu.org/git.html) can be queried by executing the Git command line noted below,
 which are more recent versions of BinUtils-CIL and GCC-CIL than what was bundled with Lego.NET v1.4.
 ``` Shell
 git ls-remote --refs http://gcc.gnu.org/git/gcc.git refs/vendors/st/\*
