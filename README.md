@@ -22,6 +22,7 @@ The following repositories contain the version of binutils and gcc that were bun
 
 Related refs in the [GNU GCC Git repository](https://gcc.gnu.org/git.html) can be queried by executing the Git command line noted below,
 which are more recent versions of BinUtils-CIL and GCC-CIL than what was bundled with Lego.NET v1.4.
+(This follows the “[vendor branch](https://david.rothlis.net/vendor-branch/)” convention.)
 ``` Shell
 git ls-remote --refs http://gcc.gnu.org/git/gcc.git refs/vendors/st/\*
 ```
