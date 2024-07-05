@@ -38,7 +38,7 @@ Because Lego.NET programs are designed to run under BrickOS on a Lego MindStorms
 Between the fact that Lego.NET is designed to work with .NET executables targeting .NET 2.0
 and the fact that the toolchain for BrickOS is Linux based, it appears to be advisable to use
 the [Mono project](https://mono-project.com/) for the .NET build tasks.
-Additionally, by leveraging the [Mono build of MSBuild](https://github.com/mono/msbuild)
+Additionally, by leveraging the [Mono build of MSBuild](https://github.com/mono/msbuild),
 SDK-style project files can even be used when building projects targeting .NET Framework 2.0.
 
 
